@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-reddit';
+
+    // Objetos del type HTMLIputElement: title and link
+    addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean{
+    
+      // Por ello, se acceden por .value: usando backticks string (ES6)
+    console.log("Salida Log:",`Adding article title: ${title.value} and link: ${link.value}`);
+    
+    return false;
+  }
+   
 }

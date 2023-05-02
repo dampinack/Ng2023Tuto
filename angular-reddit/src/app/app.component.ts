@@ -27,11 +27,22 @@ export class AppComponent {
     // Por ello, se acceden por .value: usando backticks string (ES6)
     console.log("Salida Log:", `Adding article title: ${title.value} and link: ${link.value}`);
 
-    // This is for proof:
-    //alert("Hola Mundo, this is Javascript!");
+    // Create a new Article instance with the submitted title and URL
+    this.articles.push(new Article(title.value, link.value, 0));
+
+    // Clear the input fields
+    title.value = '';
+    link.value = '';
 
     return false;
 
   }
+
+
+  sortedArticles(): Article[] {
+    // Using arrow (=>) fromES6 and sort() function: (research about soon!)
+    return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
+  }
+
 
 }
